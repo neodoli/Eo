@@ -2,7 +2,7 @@
 
 @section('header')
 
-	header
+	
 
 @endsection
 @section('title','HOME')
@@ -17,143 +17,42 @@
 
 @section('content')
 	<div class="row">
-		<br><br><br><br>
+		<br><br>
 
 		<center><h2> Nossas Aulas </h2> </center>
 
 			<br>
 
+		@foreach($courses as $course)
+
 		<div class="col-lg-4 container-padding " >
-			<div class=" text-center container-padding div-item-blue" style="background-image:url('/public/image/back.jpg')">
+			<div class=" text-center container-padding div-item-blue" 
+			style="background-image:url('{{$course->image}}')">
 			
 				
-				<p class="value-title nd-cl-white"> algebra</p>
+				<p class="value-title nd-cl-white"> {{$course->name}}</p>
 
 				<br><br>
 
-				<p class="nd-cl-white nd-bold"> aprenda os principios da algebra na pratica</p>
+				<p class="nd-cl-white nd-bold"> {{$course->description}}</p>
 
-				<p class="nd-cl-white value-title"> 20 Aulas </p>
+				<p class="nd-cl-white value-title"> {{$course->disciplina}} </p>
 
 				<br><br>
 				
-				<a href="" class="nd-btn-md nd-cl-blue nd-border nd-border-cl-blue nd-bg-white nd-bold" >comecar</a>
+				<a href="/courses/{{$course->name}}" class="nd-btn-md nd-cl-blue nd-border nd-border-cl-blue nd-bg-white nd-bold" >comecar</a>
 			</div>
 				
 		
 		</div>
 
-		<div class="col-lg-4 container-padding ">
+		@endforeach
 
-			
-			<div class=" text-center container-padding div-item-blue" style="background-image:url('/public/image/back2.jpg')">
-			
-				
-				<p class="value-title nd-cl-white"> Trigonometria</p>
-
-				<br><br>
-
-				<p class="nd-cl-white nd-bold"> aprenda os principios da algebra da Trigonometria</p>
-
-				<p class="nd-cl-white value-title"> 10 Aulas </p>
-
-				<br><br>
-				
-				<a href="" class="nd-btn-md nd-cl-blue nd-border nd-border-cl-blue nd-bg-white nd-bold" >comecar</a>
-			</div>
-				
-		
-		</div>
-
-		<div class="col-lg-4 container-padding ">
-
-			
-			<div class=" text-center container-padding div-item-blue" style="background-image:url('/public/image/back3.jpg')">
-			
-				
-				<p class="value-title nd-cl-white"> Sucessões</p>
-
-				<br><br>
-
-				<p class="nd-cl-white nd-bold"> aprenda os principios da algebra de sucessões</p>
-
-				<p class="nd-cl-white value-title"> 25 Aulas </p>
-
-				<br><br>
-				
-				<a href="" class="nd-btn-md nd-cl-blue nd-border nd-border-cl-blue nd-bg-white nd-bold" >comecar</a>
-			</div>
-				
-		
-		</div>
-
-		
-
-		<div class="col-lg-4 container-padding ">
-
-			
-			<div class=" text-center container-padding div-item-blue" style="background-image:url('/public/image/electro.jpg')">
-			
-				
-				<p class="value-title nd-cl-white"> Electro estatica</p>
-
-				<br><br>
-
-				<p class="nd-cl-white nd-bold"> aprenda os principios da algebra de sucessões</p>
-
-				<p class="nd-cl-white value-title"> 10 Aulas </p>
-
-				<br><br>
-				
-				<a href="" class="nd-btn-md nd-cl-blue nd-border nd-border-cl-blue nd-bg-white nd-bold" >comecar</a>
-			</div>
-				
-		
-		</div>
-
-		<div class="col-lg-4 container-padding ">
-
-			
-			<div class=" text-center container-padding div-item-blue" style="background-image:url('/public/image/dinamic.jpg')">
-			
-				
-				<p class="value-title nd-cl-white"> Dinamica</p>
-
-				<br><br>
-
-				<p class="nd-cl-white nd-bold"> aprenda os principios da algebra de sucessões</p>
-
-				<p class="nd-cl-white value-title"> 25 Aulas </p>
-
-				<br><br>
-				
-				<a href="" class="nd-btn-md nd-cl-blue nd-border nd-border-cl-blue nd-bg-white nd-bold" >comecar</a>
-			</div>
-		
-		</div>
-
-		<div class="col-lg-4 container-padding">
-			
-			<div class=" text-center container-padding div-item-blue" style="background-image:url('/public/image/magnetic.jpg')">
-			
-				
-				<p class="value-title nd-cl-white"> Campo Magnetico</p>
-
-				<br><br>
-
-				<p class="nd-cl-white nd-bold"> aprenda os principios da algebra de sucessões</p>
-
-				<p class="nd-cl-white value-title"> 25 Aulas </p>
-
-				<br><br>
-				
-				<a href="" class="nd-btn-md nd-cl-blue nd-border nd-border-cl-blue nd-bg-white nd-bold" >comecar</a>
-			</div>
-		</div>
+	</div>
 
 		<center><a href="/courses" class="btn nd-btn-md nd-bg-blue nd-cl-white">Ver Todas Aulas</a> </center>
 
-		<br><br><br><br>
+		<br><br>
 
 	   <center>	<h2> Nossos Exames </h2> </center>
 	   	<br>
@@ -215,7 +114,7 @@
 
 	<center><a href="/exames" class="btn nd-btn-md nd-bg-blue  nd-cl-white">Ver Todas Exames</a> </center> 
 
-		<br><br><br><br>
+		<br><br>
 @endsection
 
 @section('testemunho')

@@ -12,7 +12,7 @@
 font-size: 12px;
 
 }
-.nd-center{
+.nd-text-center{
 
 	text-align: center;
 
@@ -197,4 +197,8 @@ font-size: 12px;
 
 .nd-captilize{
 	text-transform: capitalize;
+}
+.nd-list{
+
+	list-style: none;
 }

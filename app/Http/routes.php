@@ -11,17 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
 
-Route::get('/login', function () {
-    return view('auth.login');
-});
+/**
 
-Route::get('/signin', function () {
-    return view('auth.signin');
-});
+*page route
+
+*/
+Route::get('/','HomeController@index');
+
+Route::get('/login', 'AuthController@login');
+Route::post('/login', 'AuthController@doLogin');
+
+Route::get('/signup', 'AuthController@signUp');
+Route::post('/signup', 'AuthController@doSignUp');
 
 Route::get('/about', function () {
     return view('page.about');
@@ -48,7 +50,8 @@ Route::get('/courses', function () {
     return view('page.courses');
 });
 
-Route::get('/course/{id}', function(){
+
+Route::get('/courses/{id}', function(){
 
     return view('page.course-details');
 
@@ -71,7 +74,24 @@ Route::get("/exames/{id}" ,function(){
 });
 
 
+//admin routers
 
+
+Route::get('/admin', 'admin\AdminController@index');
+Route::get('/admin/add', function(){
+
+	return view('admin/add');
+});
+Route::post('/admin/add', 'admin\AdminController@create');
+Route::get('/admin/users', 'admin\AdminController@users');
+Route::get('/admin/users/{id}/update','admin\AdminController@update');
+Route::get('/admin/users/{id}', 'admin\AdminController@disableUser');
+Route::get('/admin/courses', 'admin\AdminController@coursers');
+Route::get('/admin/teachers/in', 'admin\AdminController@teachers');
+Route::get('/admin/teachers/out', 'admin\AdminController@teachersOut');
+Route::get('/admin/exames', 'admin\AdminController@exames');
+Route::get('/admin/subjects', 'admin\AdminController@subjects');
+Route::get('/admin/signUp', 'admin\AdminController@signUp');
 
 //Route::get('/contact','ContactController@contact');
 //Route::get('/contact/ornelio','ContactController@index');

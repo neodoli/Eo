@@ -3,7 +3,6 @@
 	<head>
 
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width">
 		
 		<title>@yield('title')</title>
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -40,7 +39,7 @@
 					        <span class="icon-bar"></span>
 					        <span class="icon-bar"></span>
 				        </button>
-				        <a class="navbar-brand" href="www.esplicadoronline.com"><img src="/public/image/logo.png"></a>	
+				        <a class="navbar-brand" href="www.esplicadoronline.com"></a>	
 					</div>
 
 				<!-- navbar item-->
@@ -49,20 +48,20 @@
 
 						<ul class="nav navbar-nav">
 							<li class="nav-item">
-								<a href="/courses" class="nav-item  nd-cl-blue nav-font">  Aulas </a>
+								<a href="/class" class="nav-item">  Aulas </a>
 								
 							</li>
 
 							<li>
-								<a href="/teacher" class="nav-item nd-cl-gray nav-font">  Torne-se em um explicador </a>
+								<a href="/teacher" class="nav-item ">  Torne-se em um explicador </a>
 								
 							</li>
 							<li >
-								<a href="/pricing" class="nav-item nd-cl-gray nav-font">  Planos de pagamentos </a>
+								<a href="/pricing" class="nav-item ">  Planos de pagamentos </a>
 								
 							</li>
 							<li>
-								<a href="/about" class="nav-item nd-cl-gray nav-font ">  Sobre </a>
+								<a href="/about" class="nav-item ">  Sobre </a>
 								
 							</li>
 							
@@ -71,11 +70,11 @@
 						<ul class="nav navbar-nav navbar-right">
 
 							<li>
-								<a href="/login" class="nav-font nd-btn-md nd-cl-blue nd-border nd-border-cl-blue hover-blue" style="padding:7px 15px;"> Entrar  </a>
+								<a href="#" class="nav-item nd-cl-pink"> Entrar  </a>
 								
 							</li>
-							<li style="margin-left: 10px;">
-								<a href="/signup" class=" nav-font nd-btn-md nd-border nd-cl-white nd-bg-blue nd-border-cl-blue hover-blue" style="padding:7px 25px;" >   Registro</a>
+							<li class="nd-bg-blue nd-cl-white ">
+								<a href="#" class="nd-cl-white" >   Registro</a>
 								
 							</li>
 							
@@ -93,90 +92,97 @@
 		</div>
 
 		<!--div banner data -->
-		<div id="banner">
-			<div class="container">
-				@yield('banner')
-			</div>
-		</div>
+		
 
-		<!-- patner-->
-		<div  class="nd-bg-white">
-			<div class="container-fluid">
-
-			<center>
-
-				<ul>
-					<li class="nd-list-inline"> <img src="/public/image/uz.png"></li>
-					
-					<li class="nd-list-inline"> <img src="/public/image/isced.jpg"></li>
-			
-					<li class="nd-list-inline"> <img src="/public/image/ucm.jpg"></li>
-				
-					<li class="nd-list-inline"> <img src="/public/image/up.jpeg"></li>
-					
-					<li class="nd-list-inline"> <img src="/public/image/mct.png"></li>
-					
-				</ul>
-			</center>
-				
-			</div>
-		</div>
-
-		<!-- values data -->
-		<div class="nd-bg-white">
-			<div class="container">
-
-				<div class="row">
-				<br> <br>
-
-					<div class="col-lg-4">
-
-						<p class="value-title text-center nd-cl-blue">Desponibilidade</p>
-						
-						<p class="text-center"> Lawrence Edward Page, mais conhecido como Larry,http://www.larrypage.news, é o atual CEO da Alphabet Inc. Após a consolidação do Google como empresa, Larry Page foi nomeado, o primeiro diretor executivo. Wikipédia </p>
-					</div>
-
-					<div class="col-lg-4">
-						
-
-						<p class="value-title text-center nd-cl-blue">Acessibilidade</p>
-						
-						<p class="text-center"> Lawrence Edward Page, mais conhecido como Larry,http://www.larrypage.news, é o atual CEO da Alphabet Inc. Após a consolidação do Google como empresa, Larry Page foi nomeado, o primeiro diretor executivo. Wikipédia </p>
-						
-						
-					</div>
-					<div class="col-lg-4">
-						<p class="value-title text-center nd-cl-blue">Auxilio no aprendizado</p>
-						
-						<p class="text-center"> Lawrence Edward Page, mais conhecido como Larry,http://www.larrypage.news, é o atual CEO da Alphabet Inc. Após a consolidação do Google como empresa, Larry Page foi nomeado, o primeiro diretor executivo. Wikipédia </p>
-
-					</div>
-					
-
-				</div>
-
-				
-				
-			</div>
-		</div>
+	
 
 		<!-- div content data -->
 		<div class="container-padding">
 			<div class="container-fluid">
-				@yield('content')
-			</div>
-		</div>
 
-		<!-- div testemunho data -->
+				<div class="row">
 
-		<div class="nd-bg-white container-padding">
-			<div class="container-fluid">
-				@yield('testemunho')
+						<div class="col-md-3 col-md-offset-1 col-lg-3 col-lg-offset-1">
+
+							<div class="panel panel-default">
+
+									<div class="panel-heading">Administração</div>
+
+										<div class="panel-body">
+
+											<ul>
+												<a href="/admin"><li class="nd-list">Resumo</li></a>
+												<a href="/admin/users"><li class="nd-list">Usuarios</li></a>
+												<a href="/admin/teachers/in"><li class="nd-list">Esplicadores Internos</li></a>
+												<a href="/admin/teachers/out"><li class="nd-list">Esplicadores Pré-Inscritos</li></a>
+												<a href="/admin/courses"><li class="nd-list">Cursos</li></a>
+												<a href="/admin/exames"><li class="nd-list">Exames</li></a>
+												<a href="/admin/subjects"><li class="nd-list">Disciplinas</li></a>
+												<a href="/admin/signUp"><li class="nd-list">Inscrições</li></a>
+
+											</ul>
+												
+
+										</div>
+			
+									</div>
+
+									<div class="panel panel-default">
+										
+										<div class="panel-heading">Definições de contas</div>
+
+											<div class="panel-body">
+
+												<ul>
+													<a href="/admin/users/1/update"><li class="nd-list">Actualizar Seus Dados</li></a>
+
+													<a href="/admin/add"><li class="nd-list">Adicionar Administrador</a>
+											
+											
+
+												</ul>
+
+										
+											
+
+											</div>
+										
+										</div>
+									
+
+									</div>
+	
+								<div class="col-md-8 col-lg-8  ">
+
+									
+											@yield('content')
+									
+									
+								</div>
+								
+								
+								
+
+							</div>
+											
+
+
+
+
+
+
+
+
+
+
+
+
+				
 			</div>
 		</div>
 
 		
-
+	
 		<!-- div footer values -->
 		<div class="nd-bg-white container-padding">
 			<div class="container-fluid">
@@ -187,7 +193,7 @@
 					
 					<div class="col-lg-2 ">
 						
-						<img src="/public/image/logo.png">
+						<img src="../../../laravel/public/image/logo.png">
 					</div>
 
 					<div class="col-lg-7 ">

@@ -23,7 +23,7 @@ class CreateTables extends Migration
 
         });
 
-        Schema:create("disciplina", function(Blueprint $table ){
+        Schema::create("disciplina", function(Blueprint $table ){
 
             $table->increments('id');
             $table->string('name');
@@ -34,19 +34,19 @@ class CreateTables extends Migration
 
         });
 
-        Schema:create('user_disciplina_exame', function(Blueprint $table){
+        Schema::create('user_disciplina_exame', function(Blueprint $table){
 
             $table->integer('id-user');
             $table->integer('id-disciplina');
             $table->timestamp('start_at');
             $table->timestamp('expire_at');
-            $table->primary(array('id-user,id-disciplina');
+            $table->primary(array('id-user','id-disciplina');
             $table->foreign('id-user')->reference('id')->on('users');
             $table->foreign('id-disciplina')->reference('id')->on('disciplina');
             
         });
 
-        Schema:create('exames', function(Blueprint $table){
+        Schema::create('exames', function(Blueprint $table){
             
             $table->increments('id');
             $table->primary('id');
@@ -61,7 +61,7 @@ class CreateTables extends Migration
 
 
 
-        Schema:create('exame_material', function(Blueprint $table){
+        Schema::create('exame_material', function(Blueprint $table){
 
             $table->increments('id');
             $table->primary('id');
@@ -74,18 +74,18 @@ class CreateTables extends Migration
 
         });
 
-        Schema:create('exame_video', function(Blueprint $table){
+        Schema::create('exame_video', function(Blueprint $table){
 
             $table->increments('id');
             $table->primary('id');
             $table->integer('id_exame');
-            $table->foreign('id_exame')->reference('id')->on('exames')
+            $table->foreign('id_exame')->reference('id')->on('exames');
             $table->string('duration');
             $table->string('video_url');
 
         });
 
-        Schema:create('exame_comments', function(Blueprint $table){
+        Schema::create('exame_comments', function(Blueprint $table){
 
              $table->increments('id');
              $table->primary('id');
@@ -97,7 +97,7 @@ class CreateTables extends Migration
              $table->timestamp('publish_at');
         });
 
-        Schema:create('courses', function(Blueprint $table){
+        Schema::create('courses', function(Blueprint $table){
 
             $table->increments('id');
             $table->string('name');
@@ -107,7 +107,7 @@ class CreateTables extends Migration
 
         });
 
-        Schema:create('course_esplicador' function(Blueprint $table){
+        Schema::create('course_esplicador', function(Blueprint $table){
 
             $table->integer('id_course');
             $table->integer('id_user');
@@ -118,7 +118,7 @@ class CreateTables extends Migration
 
         });
 
-        Schema:create('course_videos', function(Blueprint $table){
+        Schema::create('course_videos', function(Blueprint $table){
 
              $table->increments('id');
              $table->primary('id');
@@ -131,7 +131,7 @@ class CreateTables extends Migration
 
         });
 
-        Schema:create('users_course', function(Blueprint $table){
+        Schema::create('users_course', function(Blueprint $table){
 
             $table->integer('cod_user');
             $table->integer('cod_curso');
@@ -144,7 +144,7 @@ class CreateTables extends Migration
 
         });
 
-        Schema:create('video_material', function(Blueprint $table){
+        Schema::create('video_material', function(Blueprint $table){
 
             $table->integer('id_video');
             $table->increments('id');
@@ -157,7 +157,7 @@ class CreateTables extends Migration
 
         });
 
-        Schema:create('video_comments', function(Blueprint $table){
+        Schema::create('video_comments', function(Blueprint $table){
 
              $table->increments('id');
              $table->primary('id');
@@ -172,7 +172,7 @@ class CreateTables extends Migration
 
         });
 
-        Schema:create('testimony', function(Blueprint $table){
+        Schema::create('testimony', function(Blueprint $table){
 
             $table->integer('id_user');
             $table->primary('id_user');

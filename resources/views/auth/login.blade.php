@@ -9,28 +9,36 @@
 
 <div class="row ">
 
-	<div class="col-lg-4 col-md-4">.</div>
-
+	
 	<div class="nd-padding-lg">
 	
-		<div class="col-lg-4 col-md-4 nd-bg-white nd-padding-lg ">
+		<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 nd-bg-white nd-padding-lg ">
 
 		<center> <img src="/public/image/logo.png" class="nd-center"> </center>
 
 		<br><br>
 
-		
-			<form>
+			<span style="color:red;">
+			{{$errors->first('email')}}, {{$errors->first('password')}}
+			</span>
+
+			<br>
+		 
+			<form method="POST" action="/login">
 					
+					
+					<input type="hidden" name="_token" value="{{csrf_token()}}">
+
+
 					
 					  <div class="form-group">
 					    
-					    <input type="email" class="form-control input-lg" id="InputEmail1" placeholder="Email">
+					    <input type="email" class="form-control input-lg" id="InputEmail1" name="email" placeholder="Email">
 					  </div>
 
 					  <div class="form-group">
 					   
-					    <input type="password" class="form-control input-lg" id="InputPassword" placeholder="Password">
+					    <input type="password" name="password" class="form-control input-lg" id="InputPassword" placeholder="Password">
 					  </div>
 
 					   

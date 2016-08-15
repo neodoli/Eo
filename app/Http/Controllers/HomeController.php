@@ -13,7 +13,7 @@ class HomeController extends Controller
 
     public function index(){
 
-    	$cousers= Course::all();
+    	$cousers= Course::take(6)->orderBy('id', 'desc')->get();
 
     	return view('index',['courses'=>$cousers]);
     }

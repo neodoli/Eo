@@ -4,11 +4,11 @@
 
 @section('content')
 
-<div class="row">
+<div class="row nd-bg-white container-padding">
 	
 	<div class="col-lg-12 col-md-12">
 
-	<form class="form-horizontal nd-bg-white">
+	<form >
 
 		<div class="form-group">
 

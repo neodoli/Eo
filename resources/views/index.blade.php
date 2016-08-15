@@ -27,7 +27,7 @@
 
 		<div class="col-lg-4 container-padding " >
 			<div class=" text-center container-padding div-item-blue" 
-			style="background-image:url('{{$course->image}}')">
+			style="background-image:url('/public/uploads/course/{{$course->image}}')">
 			
 				
 				<p class="value-title nd-cl-white"> {{$course->name}}</p>

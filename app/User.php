@@ -21,5 +21,20 @@ class User extends Model
    // protected $fillable=[]
     protected $guarded=['id'];
 
+    public function videoComments(){
+
+        return hasMany('App\VideoComment');
+    }
+
+    public function courses(){
+
+        return hasMany('App\Course');
+    }
+
+    public function Exames(){
+
+        return hasMany('App\Exames');
+    }
+
   
 }

@@ -17,7 +17,7 @@
 		<br><br>
 
 			
-				@if($errors->has('email') || $errors->has('name') || $errors->has('passwprd') || $errors->has('rpassword'))
+				@if($errors->has('email') || $errors->has('name') || $errors->has('passwprd') || $errors->has('nickName') || $errors->has('contact'))
 
 					<span style="color:red">
 							verifique se introduziu correctamente  todos campos.
@@ -25,6 +25,11 @@
 
 				@endif
 
+				@if(Session::has('error'))
+
+				<p style="color:red;"> {{Session::get('error')}}</p>
+				
+				@endif
 		
 
 		
@@ -35,31 +40,31 @@
 
 					  <div class="form-group">
 						  
-						    <input type="text" name="name" class="form-control input-lg" id="InputName" placeholder="Nome Completo">
+						    <input type="text" name="name" class="form-control input-lg" id="InputName" placeholder="Digite seu Nome Completo" value="{{old('name')}}" required="true">
+					  </div>
+
+					  <div class="form-group">
+					  
+					    <input type="text" name="nickName" class="form-control input-lg" id="InputPassword1" placeholder="Digite o nome do usuário" value="{{old('nickName')}}" required="true">
 					  </div>
 
 					
 					  <div class="form-group">
 					    
-					    <input type="email" name="email" class="form-control input-lg" id="InputEmail1" placeholder="Email">
+					    <input type="email" name="email" class="form-control input-lg" id="InputEmail1" placeholder="Email" value="{{old('email')}}" required="true" >
 					  </div>
 
 					  <div class="form-group">
 
-
-					    
-					    <input type="text" name="contact" class="form-control input-lg" id="contact" placeholder="Contacto">
+					    <input type="text" name="contact" class="form-control input-lg" id="contact" placeholder="Contacto" value="{{old('contact')}}" required="true">
 					  </div>
 
 					  <div class="form-group">
 					   
-					    <input type="password" name="password" class="form-control input-lg" id="InputPassword" placeholder="Password">
+					    <input type="password" name="password" class="form-control input-lg" id="InputPassword" placeholder="sua senha" required="true">
 					  </div>
 
-					   <div class="form-group">
-					  
-					    <input type="password" name="rpassword" class="form-control input-lg" id="InputPassword1" placeholder="Digite Novamente a Senha">
-					  </div>
+					   
 					  <button type="submit" class="btn nd-bg-pink nd-cl-white btn-lg btn-block">Cadastrar</button>
 
 					  <br>

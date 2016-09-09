@@ -1,12 +1,17 @@
 @extends('layout/main')
 
 @section('header')
-
 	
+	<center>
+	<p class="container-padding title-value" style="font-size:20px; font-weight:bolder;">  20% de Descontos para todos os cursos, Brevemente Outros Serviços.  </p> 
+
+	</center>
 
 @endsection
+
 @section('title','HOME')
-    
+
+
 @section('banner')
     <br><br>
     <p class="banner-title">Aprenda melhor. <br> Em qualquer lugar. A qualquer hora. </p>
@@ -23,97 +28,82 @@
 
 			<br>
 
+			
+
+		
+
 		@foreach($courses as $course)
 
-		<div class="col-lg-4 container-padding " >
-			<div class=" text-center container-padding div-item-blue" 
-			style="background-image:url('/public/uploads/course/{{$course->image}}')">
-			
+
+			<div class="col-lg-3  ">
+					
+						<div class="nd-bg-white margin-bottom    nd-overflow-hidden">
+						
+							<img src="/public/uploads/course/{{$course->image}}" class="nd-overflow-hidden" style="height: 200px; width: auto;" >
+
+							<div class=" nd-bg-pink ">
+								<p class="nd-cl-white nd-bg-blue  nd-padding-sm nd-bold"> 
+									<span class="nd-right"> {{$course->courseCategorie->name}}, {{$course->price}} Mtn / mês
+									</span>
+									<br> 
+								</p>
+								
+							</div>
+
+							<div class="nd-padding-sm">
+
+								
+								
+								<p class="value-title nd-cl-pink nd-uppercase"> {{$course->name}}</p>
+
+								<p class="nd-cl-black nd-uppercase"> aprenda os principios da algebra na pratica</p>
+								<br>
+
+								<center>
+
+
+									@if($course->available==='yes')
+											
+
+											<a href="/courses/{{$course->name}}" class="nd-btn-md  nd-bold nd-cl-white  nd-bg-blue nd-captilize" >Inscrever </a> <br><br>
+									@else
+									
+										<p  class="nd-btn-md nd-cl-blue nd-border nd-border-cl-blue nd-bg-white nd-bold">Brevemente</p>
+
+									@endif
+								
+								
+
+								</center>
+
+							</div>
+
+
+							<div class=" nd-bg-pink ">
+								<p class="nd-cl-white nd-bg-blue  nd-padding-sm nd-bold"> {{$course->subject->name}} </p>
+								
+							</div>
+
+							
+						</div>
+
+
+							
 				
-				<p class="value-title nd-cl-white"> {{$course->name}}</p>
-
-				<br><br>
-
-				<p class="nd-cl-white nd-bold"> {{$course->description}}</p>
-
-				<p class="nd-cl-white value-title"> {{$course->disciplina}} </p>
-
-				<br><br>
-				
-				<a href="/courses/{{$course->name}}" class="nd-btn-md nd-cl-blue nd-border nd-border-cl-blue nd-bg-white nd-bold" >comecar</a>
 			</div>
-				
-		
-		</div>
+
+
+
 
 		@endforeach
 
 	</div>
 
-		<center><a href="/courses" class="btn nd-btn-md nd-bg-blue nd-cl-white">Ver Todas Aulas</a> </center>
+		<center><a href="/courses" class="btn nd-btn-md nd-bg-pink nd-cl-white">Ver Todas Aulas</a> </center>
 
 		<br><br>
 
-	   <center>	<h2> Nossos Exames </h2> </center>
-	   	<br>
-
-		<div class="col-lg-4 container-padding ">
-			<div class=" text-center container-padding div-item-blue" style="background-image:url('/public/image/math.jpg')">
-			
-				
-				<p class="value-title nd-cl-white"> Matematica</p>
-
-				<br><br>
-
-				<p class="nd-cl-white nd-bold"> aprenda os principios da algebra de sucessões</p>
-
-				<p class="nd-cl-white value-title"> 25 Exames </p>
-
-				<br><br>
-
-				<a href="" class="nd-btn-md nd-cl-blue nd-border nd-border-cl-blue nd-bg-white nd-bold" >comecar</a>
-			</div>
-		</div>
-		<div class="col-lg-4 container-padding ">
-			<div class=" text-center container-padding div-item-blue" style="background-image:url('/public/image/fisic.jpg')">
-			
-				
-				<p class="value-title nd-cl-white"> Fisica</p>
-
-				<br><br>
-
-				<p class="nd-cl-white nd-bold"> aprenda os principios da algebra de sucessões</p>
-
-				<p class="nd-cl-white value-title"> 25 Exames </p>
-
-				<br><br>
-				
-				<a href="" class="nd-btn-md nd-cl-blue nd-border nd-border-cl-blue nd-bg-white nd-bold" >comecar</a>
-			</div>
-		</div>
-		<div class="col-lg-4 container-padding ">
-			<div class=" text-center container-padding div-item-blue" style="background-image:url('/public/image/des.jpg')">
-			
-				
-				<p class="value-title nd-cl-white"> Geometria descritiva</p>
-
-				<br><br>
-
-				<p class="nd-cl-white nd-bold"> aprenda os principios da algebra de sucessões</p>
-
-				<p class="nd-cl-white value-title"> 25 Exames </p>
-
-				<br><br>
-				
-				<a href="" class="nd-btn-md nd-cl-blue nd-border nd-border-cl-blue nd-bg-white nd-bold" >comecar</a>
-			</div>
-		</div>
-		
-
-	</div>
-
-	<center><a href="/exames" class="btn nd-btn-md nd-bg-blue  nd-cl-white">Ver Todas Exames</a> </center> 
-
+	 
 		<br><br>
 @endsection
 
@@ -121,25 +111,35 @@
    <div class="row">
 
 		<div class="col-lg-4">
-		
-			<iframe width="400" height="250"
-			src="http://www.youtube.com/embed/XGSy3_Czz8k">
-			</iframe>
+		<center>
+			<img src="/public/image/ornelio.png" class="img-circle" style="width:124px; height:124px; ">
+		</center>
+			<blockquote>
+			  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+			  <footer>Ornélio Chaúque</footer>
+			</blockquote>
 		</div>
 
 		<div class="col-lg-4">
-			
-			<iframe width="400" height="250"
-			src="http://www.youtube.com/embed/XGSy3_Czz8k">
-			</iframe>
+			<center>
+			<img src="/public/image/ornelio.png" class="img-circle" style="width:124px; height:124px; ">
+		</center>
+			<blockquote>
+			  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+			  <footer>Ornélio Chaúque</footer>
+			</blockquote>
 		</div>
 
 		<div class="col-lg-4">
 		
 
-			<iframe width="400" height="250" 
-			src="https://www.youtube.com/embed/dAgfnK528RA" frameborder="0" >
-			</iframe>
+			<center>
+			<img src="/public/image/ornelio.png" class="img-circle" style="width:124px; height:124px; ">
+		</center>
+			<blockquote>
+			  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+			  <footer>Ornélio Chaúque</footer>
+			</blockquote>
 		</div>
 
 	

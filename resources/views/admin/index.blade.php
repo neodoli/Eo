@@ -1,6 +1,6 @@
-@extends('layout/admin');
+@extends('layout/admin')
 
-@section('title','administration');
+@section('title','administration')
 
 @section('content')
 

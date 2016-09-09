@@ -18,10 +18,22 @@
 
 		<br><br>
 
+		@if($errors->has('email') || $errors->has('password') )
+
 			<span style="color:red;">
 			{{$errors->first('email')}}, {{$errors->first('password')}}
 			</span>
 
+
+		@endif
+
+			
+
+			@if(session('error'))
+
+				<p style="color:red;">{{session('error')}}</p>
+
+			@endif
 			<br>
 		 
 			<form method="POST" action="/login">
@@ -33,12 +45,18 @@
 					
 					  <div class="form-group">
 					    
-					    <input type="email" class="form-control input-lg" id="InputEmail1" name="email" placeholder="Email">
+					    <input type="email" value="{{old('email')}}" class="form-control input-lg" id="InputEmail1" name="email" placeholder="Email" required="true">
 					  </div>
 
 					  <div class="form-group">
 					   
-					    <input type="password" name="password" class="form-control input-lg" id="InputPassword" placeholder="Password">
+					    <input type="password" required="true"  name="password" class="form-control input-lg" id="InputPassword" placeholder="Password">
+					  </div>
+
+					  <div class="form-group">
+
+					  	<input type="checkbox" name="remember" value="yes"> Manter a sessão iniciada
+					  	
 					  </div>
 
 					   
@@ -56,7 +74,7 @@
 
 					  	<div class="col-lg-6 col-md-6">
 
-					  		  <a href="/signin"  class="btn nd-bg-white nd-cl-pink btn-lg btn-block  nd-text-small" > criar uma conta</a>
+					  		  <a href="/signin"  class="btn nd-bg-blue nd-cl-white btn-lg btn-block  nd-text-small" > Criar uma conta</a>
 					  		
 					  	</div>
 					  	

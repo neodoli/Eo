@@ -37,5 +37,6 @@ class AddOthersTable extends Migration
     public function down()
     {
         //
+        Schema::drop('testimony');
     }
 }

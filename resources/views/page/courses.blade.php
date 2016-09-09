@@ -1,4 +1,4 @@
-@extends('layout/main2')
+@extends('layout/main3')
 
 @section("title", "Cursos")
 
@@ -12,118 +12,82 @@
 		
 				<div class=" row">
 
-					
-					<div class="col-lg-4  ">
+		@if($courses->isEmpty())
+
+			<p class="nd-cl-black big-title">Nenhum Curso encontrado nesta categoria</p>
+
+			<a href="/courses" class="btn nd-btn-medium nd-cl-white nd-bg-blue">Ir para Cursos</a>
+
+		@endif
+
+				
+
+		@foreach($courses as $course)
+
+
+			<div class="col-lg-4 ">
 					
 						<div class="nd-bg-white margin-bottom    nd-overflow-hidden">
 						
-							<img src="/public/image/dinamic.jpg" class="nd-overflow-hidden" style="width:auto; height: 200px;" >
+							<img src="/public/uploads/course/{{$course->image}}" class="nd-overflow-hidden" style="height: 200px; width:100%;" >
 
-							<div class="container-padding">
+							<div class=" nd-bg-pink ">
+								<p class="nd-cl-white nd-bg-blue  nd-padding-sm nd-bold"> 
+									<span class="nd-right"> {{$course->courseCategorie->name}}, {{$course->price}} Mtn / mês
+									</span>
+									<br> 
+								</p>
 								
-								<p class="value-title"> algebra</p>
+							</div>
 
-								<p> aprenda os principios da algebra na pratica</p>
+							<div class="nd-padding-sm">
 
-								<a href="/course/algebra" class="nd-btn-md  nd-bold nd-cl-white nd-cl-blue nd-right nd-bg-white nd-uppercase" >comecar </a> <br><br>
+								
+								
+								<p class="value-title nd-cl-pink nd-uppercase"> {{$course->name}}</p>
 
+								<p class="nd-cl-black nd-uppercase"> aprenda os principios da algebra na pratica</p>
+								<br>
+
+								<center>
+
+
+									@if($course->available==='yes')
+											
+
+											<a href="/courses/{{$course->name}}" class="nd-btn-md  nd-bold nd-cl-white  nd-bg-blue nd-captilize" >Inscrever </a> <br><br>
+									@else
+									
+										<p  class="nd-btn-md nd-cl-blue nd-border nd-border-cl-blue nd-bg-white nd-bold">Brevemente</p>
+
+									@endif
+								
+								
+
+								</center>
+
+							</div>
+
+
+							<div class=" nd-bg-pink ">
+								<p class="nd-cl-white nd-bg-blue  nd-padding-sm nd-bold"> {{$course->subject->name}} </p>
+								
 							</div>
 
 							
 						</div>
+
+
 							
 				
-					</div>
+			</div>
 
-					<div class="col-lg-4  ">
-					
-						<div class="nd-bg-white margin-bottom    nd-overflow-hidden">
-						
-							<img src="/public/image/dinamic.jpg" class="nd-overflow-hidden" style="width:auto; height: 200px;" >
 
-							<div class="container-padding">
-								
-								<p class="value-title"> algebra</p>
 
-								<p> aprenda os principios da algebra na pratica</p>
 
-								<a href="" class="nd-btn-md  nd-bold nd-cl-white nd-cl-blue nd-right nd-bg-white nd-uppercase" >comecar </a> <br><br>
+		@endforeach
 
-							</div>
-
-							
-						</div>
-							
-				
-					</div>
-
-					<div class="col-lg-4  ">
-					
-						<div class="nd-bg-white   margin-bottom  nd-overflow-hidden">
-						
-							<img src="/public/image/dinamic.jpg" class="nd-overflow-hidden" style="width:auto; height: 200px;" >
-
-							<div class="container-padding">
-								
-								<p class="value-title"> algebra</p>
-
-								<p> aprenda os principios da algebra na pratica</p>
-
-								<a href="" class="nd-btn-md  nd-bold nd-cl-white nd-cl-blue nd-right nd-bg-white nd-uppercase" >comecar </a> <br><br>
-
-							</div>
-
-							
-						</div>
-							
-				
-					</div>
-
-					<div class="col-lg-4  ">
-					
-						<div class="nd-bg-white margin-bottom   nd-overflow-hidden">
-						
-							<img src="/public/image/dinamic.jpg" class="nd-overflow-hidden" style="width:auto; height: 200px;" >
-
-							<div class="container-padding">
-								
-								<p class="value-title"> algebra</p>
-
-								<p> aprenda os principios da algebra na pratica</p>
-
-								<a href="" class="nd-btn-md  nd-bold nd-cl-white nd-cl-blue nd-right nd-bg-white nd-uppercase" >comecar </a> <br><br>
-
-							</div>
-
-							
-						</div>
-							
-				
-					</div>
-
-					<div class="col-lg-4  ">
-					
-						<div class="nd-bg-white margin-bottom    nd-overflow-hidden">
-						
-							<img src="/public/image/dinamic.jpg" class="nd-overflow-hidden" style="width:auto; height: 200px;" >
-
-							<div class="container-padding">
-								
-								<p class="value-title"> algebra</p>
-
-								<p> aprenda os principios da algebra na pratica</p>
-
-								<a href="" class="nd-btn-md  nd-bold nd-cl-white nd-cl-blue nd-right nd-bg-white nd-uppercase" >comecar </a> <br><br>
-
-							</div>
-
-							
-						</div>
-							
-				
-					</div>
-
-					
+										
 
 
 				</div>	
@@ -134,23 +98,37 @@
 
 			<div class="row">
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  ">
+
+				<p class="value-title">Filtrar pesquisa</p>
 				
 					
 						<ul class="nd-bg-white   ul-categorie">
 
-							<p class="list-categorie nd-bold nd-left">Categorias</p><br><br>
+							<center> <p class=" nd-bold ">Disciplinas</p></center>
+							<hr>
 
-							<li class="list-categorie "><a href="#" >Matematica <span class="nd-right nd-cl-gray">20</span> </li></a> 
+							@foreach($subjects as $subject)
 
-							<li class="list-categorie "><a href="#" >Matematica <span class="nd-right nd-cl-gray">20</span> </li></a> 
+							<li class="list-categorie "><a href="/courses/disciplinas/{{$subject->name}}" >{{$subject->name }} </li></a> 
+
+							@endforeach
 							
-							<li class="list-categorie "><a href="#" >Matematica <span class="nd-right nd-cl-gray">20</span> </li></a> 
 							
-							<li class="list-categorie "><a href="#" >Matematica <span class="nd-right nd-cl-gray">20</span> </li></a> 
 							
-							<li class="list-categorie "><a href="#" >Matematica <span class="nd-right nd-cl-gray">20</span> </li></a> 
 							
-							<li class="list-categorie "><a href="#" >Matematica <span class="nd-right nd-cl-gray">20</span> </li></a> 
+
+						</ul>
+						<br>
+
+							<ul class="nd-bg-white   ul-categorie">
+							<center> <p class=" nd-bold ">Nivel</p></center>
+							<hr>
+
+							@foreach($categories as $categorie)
+							<li class="list-categorie "><a href="/courses/nivel/{{$categorie->name}}" >{{$categorie->name}} </li></a> 
+
+							@endforeach
+
 							
 							
 							

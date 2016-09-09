@@ -17,4 +17,14 @@ class Course extends Model
 
     	return $this->hasMany('App\CourseVideo','id_course', 'id');
     }
+
+    public function courseCategorie(){
+
+    	return $this->belongsTo('App\CourseCategorie','type_categorie', 'type');
+    }
+
+    public function subject(){
+
+    	return $this->belongsTo('App\Subject', 'id_subject', 'id');
+    }
 }

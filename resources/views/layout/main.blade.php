@@ -12,8 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="/public/style/framework.css">
 		<link rel="stylesheet" type="text/css" href="/public/style/style.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-		<script sync src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<script sync type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		
 	</head>
 	<body>
 
@@ -40,7 +39,7 @@
 					        <span class="icon-bar"></span>
 					        <span class="icon-bar"></span>
 				        </button>
-				        <a class="navbar-brand" href="www.esplicadoronline.com"><img src="/public/image/logo.png"></a>	
+				        <a class="navbar-brand" href="/"><img src="/public/image/logo.png"></a>	
 					</div>
 
 				<!-- navbar item-->
@@ -49,24 +48,67 @@
 
 						<ul class="nav navbar-nav">
 							<li class="nav-item">
-								<a href="/courses" class="nav-item  nd-cl-blue nav-font">  Aulas </a>
+								<a href="/courses" class="nav-item  nd-cl-blue nav-font">  Cursos </a>
 								
 							</li>
 
+							<!--
+
 							<li>
-								<a href="/teacher" class="nav-item nd-cl-gray nav-font">  Torne-se em um explicador </a>
+								<a href="/exames" class="nav-item nd-cl-gray nav-font">  Exames </a>
 								
 							</li>
 							<li >
-								<a href="/pricing" class="nav-item nd-cl-gray nav-font">  Planos de pagamentos </a>
+								<a href="/testes" class="nav-item nd-cl-gray nav-font"> Teste Provinciais</a>
 								
 							</li>
-							<li>
-								<a href="/about" class="nav-item nd-cl-gray nav-font ">  Sobre </a>
+							-->
+
+							<li >
+								<a href="/teachersOut" class="nav-item nd-cl-gray nav-font"> Torne-se num Explicador</a>
 								
 							</li>
 							
+							
 						</ul>
+
+						@if(Auth::check())
+
+						<ul class="nav navbar-nav navbar-right">
+
+							<li>
+								<img src="/public/uploads/user/{{Auth::user()->image}}"  style="padding:7px 7px;"> 
+								
+							</li>
+
+
+							
+
+							<li style="padding:7px 7px;" >
+
+								<div class="dropdown">
+									  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+									   Olá,    {{Auth::user()->username}}
+									    <span class="caret"></span>
+									  </button>
+
+									  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+									    <li><a href="/dashboard">Suas Inscrições</a></li>
+									    <li><a href="/profile">Perfil</a></li>
+									    <li><a href="/logout">Sair</a></li>
+									    
+									  </ul>
+								</div>
+
+								
+							</li>
+							
+
+						</ul>
+
+
+
+						@else
 
 						<ul class="nav navbar-nav navbar-right">
 
@@ -81,6 +123,10 @@
 							
 
 						</ul>
+
+						@endif
+
+						
 						
 
 					</div>
@@ -175,7 +221,7 @@
 			</div>
 		</div>
 
-		
+		<br>
 
 		<!-- div footer values -->
 		<div class="nd-bg-white container-padding">
@@ -251,6 +297,9 @@
 
 			</div>
 		</div>
+
+		<script sync src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script sync type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 	</body>
 </html>

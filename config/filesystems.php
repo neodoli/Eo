@@ -50,7 +50,7 @@ return [
 
          'privateUploads' => [
             'driver' => 'local',
-            'root'   => storage_path().'/uploads',
+            'root'   => storage_path().'/app',
         ],
 
           'publicUploads' => [

@@ -6,7 +6,16 @@
 
 	<div class="row">
 
+		<div class="jumbotron" style="background-image:url(/public/image/no-money.jpg)">
+
+			<h2 class="nd-cl-blue nd-bold">Queres Ganhar mola? sem gastar nenhum tustão?</h2>
+			<p class="nd-cl-white nd-bold">Então inscreva-se no explicadoronline e torne-se em um explicador e ganhe 20% valor de incrição sobre cursos por si lecionados.</p>
+			
+		</div>
+
 		<div class="col-lg-6 col-md-6 col-lg-offset-3 col-md-offset-3  col-sm-12 col-xs-12">
+
+
 
 
 			@if($errors->has('name') || $errors->has('email') || $errors->has('contact')|| $errors->has('subjectList') || $errors->has('contentList') )

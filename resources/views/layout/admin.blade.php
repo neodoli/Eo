@@ -38,7 +38,7 @@
 					        <span class="icon-bar"></span>
 					        <span class="icon-bar"></span>
 				        </button>
-				        <a class="navbar-brand" href="/"><img src="/public/image/logo.png"></a>	
+				          <a class="navbar-brand" href="/" style="margin-bottom:10px;"><img src="/public/image/logo.png"></a>
 					</div>
 
 				<!-- navbar item-->
@@ -47,7 +47,7 @@
 
 						<ul class="nav navbar-nav">
 							<li class="nav-item">
-								<a href="/courses" class="nav-item  nd-cl-blue nav-font">  Cursos </a>
+								<a href="/admin" class="nav-item  nd-cl-blue nav-font">  Administração </a>
 								
 							</li>
 
@@ -61,13 +61,13 @@
 								<a href="/testes" class="nav-item nd-cl-gray nav-font"> Teste Provinciais</a>
 								
 							</li>
-							-->
+							
 
-							<li >
+						
 								<a href="/teachersOut" class="nav-item nd-cl-gray nav-font"> Torne-se num Explicador</a>
 								
 							</li>
-							
+							-->
 							
 						</ul>
 
@@ -164,7 +164,9 @@
 												<a href="/admin/courses"><li class="nd-list">Cursos</li></a>
 												<a href="/admin/exames"><li class="nd-list">Exames</li></a>
 												<a href="/admin/subjects"><li class="nd-list">Disciplinas</li></a>
-												<a href="/admin/signUp"><li class="nd-list">Inscrições</li></a>
+												<a href="/admin/courses/signup"><li class="nd-list">Inscrições</li></a>
+
+												<a href="/admin/cupom"><li class="nd-list">Cupão</li></a>
 
 											</ul>
 												
@@ -239,7 +241,7 @@
 					
 					<div class="col-lg-2 ">
 						
-						<img src="../../../laravel/public/image/logo.png">
+						<img src="/public/image/logofooter.png">
 					</div>
 
 					<div class="col-lg-7 ">

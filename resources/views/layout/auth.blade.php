@@ -36,7 +36,7 @@
 					
 					<div class="col-lg-2 ">
 						
-						<img src="/public/image/logo.png">
+						<img src="/public/image/logofooter.png">
 					</div>
 
 					<div class="col-lg-7 ">

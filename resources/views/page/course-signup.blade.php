@@ -33,15 +33,6 @@
 
 				<div class="form-group">
 
-					<label for="numberDoc">Numero do Recibo ou talão de deposito</label>
-
-					<input type="number" name="numberDoc" class="form-control" required="true">
-					
-
-				</div>
-
-				<div class="form-group">
-
 					<label for="file">Enexar o documento ou imagem do Recibo</label>
 
 					<input type="file" name="data" class="form-control" required="true">

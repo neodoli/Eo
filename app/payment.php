@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class payment extends Model
 {
@@ -18,6 +19,12 @@ class payment extends Model
      public function signup(){
 
     	return $this->belongsTo('App\UserCourse','id_payments', 'id');
+    }
+
+    public function getDateAttribute($values){
+        $date= new Carbon($values);
+        return $date->toFormattedDateString();  
+
     }
 
 

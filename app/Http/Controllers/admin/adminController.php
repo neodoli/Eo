@@ -15,6 +15,8 @@ use App\CourseCategorie;
 use App\ExameCategorie;
 use App\Http\Controllers\Controller;
 use Storage;
+use Carbon\Carbon;
+use App\Cupom;
 
 class AdminController extends Controller
 {
@@ -31,6 +33,29 @@ class AdminController extends Controller
 
     	
 
+    }
+
+    public function cupom(){
+
+        $cupoms= Cupom::all();
+        return view('admin.cupom', compact('cupoms'));
+
+    }
+
+    public function cupomStore(Request $request){
+
+        $rules=['days'=>'required'];
+        $this->validate($request,$rules);
+
+        $cupom= new Cupom;
+        $cupom->days=$request->days;
+        $cupom->start_at=Carbon::now();
+        $cupom->codigo=rand(1111111111,9999999999);
+        $cupom->save();
+
+        return redirect()->back();
+
+        
     }
 
     public function create(){

@@ -38,7 +38,7 @@
 					        <span class="icon-bar"></span>
 					        <span class="icon-bar"></span>
 				        </button>
-				        <a class="navbar-brand" href="/></a>	
+				        <a class="navbar-brand" href="/" style="margin-bottom:10px;"><img src="/public/image/logo.png"></a>
 					</div>
 
 				<!-- navbar item-->
@@ -114,7 +114,7 @@
 					
 					<div class="col-lg-2 ">
 						
-						<img src="../../../laravel/public/image/logo.png">
+						<img src="/public/image/logofooter.png">
 					</div>
 
 					<div class="col-lg-7 ">

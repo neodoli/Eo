@@ -3,7 +3,7 @@
 @section('header')
 	
 	<center>
-	<p class="container-padding title-value" style="font-size:20px; font-weight:bolder;">  20% de Descontos para todos os cursos, Brevemente Outros Serviços.  </p> 
+	<p class="container-padding title-value" style="font-size:20px; font-weight:bolder;">  20% de Descontos, Brevemente Outros Serviços (Testes Provinciais e Exames [10ª, 12ª e admissão]).  </p> 
 
 	</center>
 
@@ -56,7 +56,7 @@
 								
 								<p class="value-title nd-cl-pink nd-uppercase"> {{$course->name}}</p>
 
-								<p class="nd-cl-black nd-uppercase"> aprenda os principios da algebra na pratica</p>
+								<p class="nd-cl-black nd-uppercase"> {{$course->description}}</p>
 								<br>
 
 								<center>

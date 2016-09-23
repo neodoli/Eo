@@ -42,7 +42,7 @@
 
 			<br>
 			<br>
-			<p class=""><span class="value-title ">{{$course->courseCategorie->price}}</span></p>
+			<p class=""><span class="value-title ">{{$course->price}}</span> Mt/mês</p>
 			<p  class="nd-cl-gray"> <span style="margin-right:10px;" class="value-title " >{{$course->courseVideos->count()}}</span>Aulas</p>
 
 			

@@ -38,7 +38,7 @@
 					        <span class="icon-bar"></span>
 					        <span class="icon-bar"></span>
 				        </button>
-				        <a class="navbar-brand" href="/"><img src="/public/image/logo.png"></a>	
+				          <a class="navbar-brand" href="/" style="margin-bottom:10px;"><img src="/public/image/logo.png"></a>
 					</div>
 
 				<!-- navbar item-->
@@ -47,11 +47,11 @@
 
 						<ul class="nav navbar-nav">
 							<li class="nav-item">
-								<a href="/courses" class="nav-item  nd-cl-blue nav-font">  Cursos </a>
+								<a href="/courses" class="nav-item  nd-cl-blue nav-font">  Explicações </a>
 								
 							</li>
 
-							<!--
+							
 
 							<li>
 								<a href="/exames" class="nav-item nd-cl-gray nav-font">  Exames </a>
@@ -62,7 +62,7 @@
 								
 							</li>
 
-							-->
+							
 
 							<li >
 								<a href="/teachersOut" class="nav-item nd-cl-gray nav-font"> Torne-se num Explicador</a>
@@ -160,7 +160,7 @@
 					
 					<div class="col-lg-2 ">
 						
-						<img src="../../../laravel/public/image/logo.png">
+						<img src="/public/image/logofooter.png">
 					</div>
 
 					<div class="col-lg-7 ">

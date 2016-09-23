@@ -19,7 +19,7 @@ class UserCourse extends Model
 
     public function payment(){
 
-    	return $this->belongsTo('App\payment','id_payments', 'id');
+    	return $this->belongsTo('App\payment','id_payment', 'id');
     }
 
     public function course(){
@@ -36,6 +36,12 @@ class UserCourse extends Model
     */
 
     public function getEndAtAttribute($value){
+
+        $date= new Carbon($value);
+        return $date->toFormattedDateString();  
+    }
+
+     public function getStartAtAttribute($value){
 
         $date= new Carbon($value);
         return $date->toFormattedDateString();  

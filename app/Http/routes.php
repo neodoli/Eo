@@ -54,9 +54,9 @@ Route::group(['middleware'=>'auth'], function(){
 	Route::get('/dashboard', 'UserController@dashboard');
 	Route::get('/dashboard/requested', 'UserController@requested');
 	Route::get('/dashboard/old', 'UserController@old');
-	Route::get('/profile', 'UserController@dashboard');
-	Route::get('/profile/edit', 'UserController@dashboard');
-	Route::post('/profile/update', 'UserController@dashboard');
+	Route::get('/profile', 'UserController@profile');
+	Route::post('/profile/update', 'UserController@profileUpdate');
+	Route::post('/profile/cupom', 'UserController@cupomStore');
 	Route::get('/classroom/{courseName}/{class}','UserController@classroom');
 	Route::get('/courses/{name}/signup','UserController@signup');
 	Route::post('/courses/{name}/signup','UserController@doSignup');
@@ -169,6 +169,18 @@ Route::group(['middleware'=>['auth','roleCheck']], function(){
 
 
 
+	Route::get('/admin/courses/signup','admin\SignupController@courseSignups');
+	Route::get('/admin/course/signup/{user}/{course}','admin\SignupController@courseSignup');
+	Route::get('/admin/course/signup/{user}/{course}/problem','admin\SignupController@courseProblem');
+	Route::post('/admin/course/signup/{user}/{course}/problem','admin\SignupController@courseProblemStore');
+	Route::post('/admin/course/signup/{user}/{course}/confirm','admin\SignupController@courseConfirm');
+
+
+	
+	Route::get('/admin/cupom','admin\AdminController@cupom');
+	Route::post('/admin/cupom','admin\AdminController@cupomStore');
+
+
 	Route::get('/admin/courses', 'admin\AdminController@courses');
 	Route::get('/admin/courses/categorie/add', 'admin\AdminController@coursesCategorieAdd');
 	Route::post('/admin/courses/categorie/store', 'admin\AdminController@coursesCategorieStore');
@@ -215,11 +227,6 @@ Route::group(['middleware'=>['auth','roleCheck']], function(){
 
 
 
-
-
-
-
-
 	Route::get('/admin/subjects', 'admin\AdminController@subjects');
 	Route::get('/admin/subjects/create','admin\AdminController@subjectCreate');
 	Route::post('/admin/subjects/store','admin\AdminController@subjectStore');
@@ -236,6 +243,11 @@ Route::group(['middleware'=>['auth','roleCheck']], function(){
 
 
 	Route::get('/admin/signUp', 'admin\AdminController@signUp');
+
+
+
+
+	
 
 
 

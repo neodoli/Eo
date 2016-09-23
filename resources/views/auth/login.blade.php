@@ -14,9 +14,15 @@
 	
 		<div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 nd-bg-white nd-padding-lg ">
 
-		<center> <img src="/public/image/logo.png" class="nd-center"> </center>
+		<center> <img src="/public/image/logofooter.png" class="nd-center"> </center>
 
 		<br><br>
+
+		@if(Session::has('info'))
+
+			<p class="nd-cl-blue">{{Session::get('info')}}</p>
+
+		@endif
 
 		@if($errors->has('email') || $errors->has('password') )
 
